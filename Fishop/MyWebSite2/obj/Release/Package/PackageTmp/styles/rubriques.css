@@ -1,0 +1,64 @@
+
+.rubriques {
+    float: left;
+    width: 100%;
+    margin-left: 5px;
+    
+}
+
+    .rubriques a {
+    text-decoration:none;
+    
+    }
+
+.rubriques>div {
+    width: 250px;
+
+}
+
+   
+
+ .rubriques>div {
+    display: inline-block;
+    
+}
+
+ .allcatitem{
+    padding: 5px;
+}
+
+
+.rubriques .allcatitem >a img
+{
+    width: 200px;
+    height: 170px;
+     border-radius: 30px;
+}
+
+.allcatitem >a img:hover {
+         box-shadow: 20px 20px 10px rgba(0,0,0,0.5);
+         transition: box-shadow 0.5s;
+    }
+
+
+.inscription
+{
+    background-color:azure;
+    font-size: 25px;
+    text-align: Center;
+    color: black;
+   
+    border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin-left: 15%;
+}
+
+.allcatitem p:hover {
+    cursor:pointer;
+color:green;
+}

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "AddReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/styles/OderF-style.css">
+
+<div id="content">
+<h2>Добавление отзыва</h2>
+    
+<form  method="post">
+    <input name="parentReview" type="hidden" value="@ViewBag.parentId" />
+    <table>
+        <tr>
+            <td><p>Введите свое имя</p></td>
+            <td><input type="text" name="Name" /> </td>
+            <td class="Error" id="FirstNameErr"></td>
+        </tr>
+        <tr>
+            <td><p>Ваш телефон</p></td>
+            <td><input type="text" name="Phone" /></td>
+            <td class="Error" id="PhoneErr"></td>
+        </tr>
+        <tr>
+            <td><p>Ваш Отзыв</p></td>
+            <td><textarea name="reviewText" cols="48" rows="8" ></textarea></td>
+        </tr>
+        <tr><td><input class="Button1" type="submit" value="Отправить"/></td><td></td></tr>
+    </table>
+
+
+</form>
+
+
+
+
+</div>
+

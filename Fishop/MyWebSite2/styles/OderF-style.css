@@ -1,0 +1,28 @@
+﻿form {
+font-size:18px;
+}
+
+form input, form textarea {
+    outline:none;
+    border-radius: 20px;
+    padding: 5px 8px;
+    color: #333;
+
+}
+    form input, form textarea:hover {
+       
+    }
+
+
+    form input:focus {
+       
+        border:solid #FFD700 ;
+    }
+
+.Button1:active {
+        border:solid #FFD700 ;
+}
+
+button {
+
+}

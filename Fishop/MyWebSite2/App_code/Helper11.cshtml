@@ -1,0 +1,16 @@
+﻿@helper HelperName(string name) {
+    // вспомогательное приложение может содержать код и/или разметку, например
+    // var msg = "Здравствуйте, " + name;
+    // <p>@msg</p>
+    // Дополнительные сведения см. по адресу: http://go.microsoft.com/fwlink/?LinkID=204658
+}
+
+@helper HtmlList(string[] items)
+{
+    <ul>
+        @foreach (var item in items)
+        {
+            <li>@item</li>
+        }
+    </ul>
+}

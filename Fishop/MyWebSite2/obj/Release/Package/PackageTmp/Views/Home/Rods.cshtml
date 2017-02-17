@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MyWebSite2.Models.Rod> 
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<LINK REL="stylesheet" TYPE="text/css" HREF="~/styles/udochki_style.css">
+
+
+
+<div id=content>
+
+    <h2>Удочки</h2>
+    <div class="product-list">
+       
+        @foreach (var b in Model)
+        {
+            <div id="in" class="product" style="">
+                <div class="overflow_fix">
+                    <div class="product_chars">
+                        <a class="product_title">@b.Name (@b.Artikul)</a>
+                        <div class="chars_list">
+                            <p>Артикул: @b.Artikul</p>
+
+                        </div>
+
+                    </div>
+                    <div class="product_logo">
+                        <a href="~/images/Rods/@b.imageName"><img class="main_img" src="~/images/Rods/@b.imageName" alt="@b.Name"></a>
+                    </div>
+                </div>
+                              
+                <div class="product_price">
+                    <span class="pricenew">@b.Price грн</span>
+
+                    <form method="post" action="/Cart/AddtoCart">
+                        <input name="productId"  type="hidden" value="@b.Id">
+                        <input name="CategoryId" type="hidden" value="@b.CategoryId">
+
+                        <input name="returnUrl" type="hidden" value="@Request.Url.PathAndQuery" />
+                        <div class="pull-right">
+
+                            <input type="submit" class="button" value="В корзину" />
+                        </div>
+                    </form>
+             
+                </div>
+
+
+
+                <div class="info">
+                    <div><span style="color:#555555; font-weight: 700;">Материал:</span>&nbsp;@b.Material</div>
+                    <div><span style="color:#555555; font-weight: 700;">Длина (см):</span>&nbsp;@b.Length</div>
+                    <div><span style="color:#555555; font-weight: 700;">Вес (г):</span>&nbsp;@b.Weight</div>
+                    <div><span style="color:#555555; font-weight: 700;">Кол-во секций:</span>&nbsp;@b.SectionsNumber</div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

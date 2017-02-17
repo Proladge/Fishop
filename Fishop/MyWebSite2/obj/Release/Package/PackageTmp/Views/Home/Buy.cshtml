@@ -1,0 +1,47 @@
+﻿
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/styles/OderF-style.css" />
+      <link rel="stylesheet" type="text/css" href="~/styles/content-style.css">
+
+<div id="content">
+        <h3>Форма оформления покупки</h3>
+        <form method="post"  name="customerForm" onsubmit="return validate(this)">
+            <table>
+                <tr>
+                    <td><p>Введите свое имя</p></td>
+                    <td><input type="text" name="FirstName"  /> </td>
+                    <td class ="Error" id="FirstNameErr"></td>
+                </tr>
+                <tr>
+                    <td><p> и фамилию </p></td>
+                    <td> <input type="text" name="LastName"  " /></td>
+                    <td class ="Error" id="LastNameErr"></td>
+                </tr>
+                <tr>
+                    <td><p> Город</p></td>
+                    <td> <input type="text" name="City" /></td>
+                    </tr>
+                <tr>
+                    <td><p>Адрес</p></td>
+                    <td>
+                        <input type="text" name="Address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Email</p></td>
+                    <td><input type="text" name="Email"/></td>
+                    <td class="Error" id="EmailErr"></td>
+                </tr>
+                <tr>
+                    <td><p>Ваш телефон</p></td>
+                    <td><input type="text" name="Phone" /></td>
+                    <td class="Error" id="PhoneErr"></td>
+                    </tr>
+ <tr><td><input class="Button1" type="submit" value="Отправить"   /> </td><td></td></tr>
+            </table>
+        </form>
+</div>
+<script type="text/javascript" src="~/Scripts/validationScript.js"></script>

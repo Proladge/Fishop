@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MyWebSite2.Models.Reel>
+<LINK REL="stylesheet" TYPE="text/css" HREF="~/styles/udochki_style.css" />
+<div id="content">
+    <h2>Катушки</h2>
+    <div class="product-list">
+        @foreach (var b in Model)
+        {
+        <div id="in" class="product" style="">
+            <div class="productb">
+                <div class="overflow_fix">
+                    <div class="product_chars">
+                        <a class="product_title" href="images/katushki/inercionnaya_katushka.jpg">@b.Name </a>
+                        <div class="chars_list">
+                            <p>@b.Artikul</p>
+                        </div>
+
+                    </div>
+                    <div class="product_logo">
+                        <a href="~/images/katushki/@b.imageName"><img class="main_img" src="~/images/katushki/@b.imageName" alt="@b.Name ( @b.Artikul)"></a>
+
+
+                    </div>
+                </div>
+
+                <div class="product_price">
+                    <span class="pricenew">@b.Price грн</span>
+
+                    <form method="post" action="/Cart/AddtoCart">
+                        <input name="productId" type="hidden" value="@b.Id">
+                        <input name="CategoryId" type="hidden" value="@b.CategoryId">
+
+                        <input name="returnUrl" type="hidden" value="@Request.Url.PathAndQuery" />
+                        <div class="pull-right">
+
+                            <input type="submit" class="button" value="В корзину" />
+                        </div>
+                    </form>
+                                       
+                </div>
+
+
+                <div class="info">
+                    <div>Дюймов на колено:&nbsp;@b.Inches_per_Crank</div>
+                   <div>Вес (г):&nbsp;@b.Weight</div>
+                    <div>Фрикцион:&nbsp;@b.Friction</div>
+                    <div>Кол-во подшипников:&nbsp;@b.BearingsNumber</div>
+                    <div >Передаточное число:&nbsp;@b.GearRatio:1</div>
+                </div>
+
+
+            </div>
+        </div>
+        }
+       
+</div>
+</div>

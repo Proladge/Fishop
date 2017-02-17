@@ -1,0 +1,32 @@
+﻿.c-map-box {
+    overflow: hidden;
+    height: 600px;
+}
+
+.ymaps-map {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0!important;
+    padding: 0!important;
+    border: 0 none;
+    color: #000;
+    text-align: left!important;
+    text-decoration: none!important;
+    font-weight: 400!important;
+    font-style: normal!important;
+    line-height: normal;
+}
+
+.ymaps-map {
+    background: url(data:image/gif;base64,R0lGODdhxAEsAfIHALOystPS0r69vbe3t5WVlaamptDPz8bFxSH/C…8zNT31qfybd5+uVZHAN0Pr9h4/tE6pLwe60W/v9r7lniq49m7vpg7DP3hq7/a+w6Zi7ymcAAA7);
+}
+
+.ymaps-copyrights-pane {
+    position: absolute;
+    right: 3px;
+    bottom: 5px;
+    display: block;
+    width: auto;
+    white-space: nowrap;
+}

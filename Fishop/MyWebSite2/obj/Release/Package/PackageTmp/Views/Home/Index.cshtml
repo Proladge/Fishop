@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MyWebSite2.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link rel="stylesheet" type="text/css" href="~/styles/adaptiveslider.css">
+<link rel="stylesheet" type="text/css" href="~/styles/rubriques.css">
+<script src="~/Scripts/jquery.adaptiveslider.js"></script>
+    <script src="~/Scripts/rgbaster.js"></script>
+<script src="~/Scripts/rgbaster.min.js"></script>
+
+<script>
+    $(function () {
+        $('.adaptive-slider').adaptiveSlider({
+            opacity: 0.7,
+            normalizedTextColors: {
+                light: '#f1f1f1',
+                dark: '#222'
+            }
+        });
+    });
+</script>
+
+<div id="content">
+<ul class="adaptive-slider">
+
+    @foreach (var p in Model)
+    {
+    <li>
+        <figure>
+            <img  src="~/images/Rods/@p.imageName"/>
+            <figcaption>
+                <h1>@p.Name<span style="color:green;">@p.Price грн</span></h1>
+                <p>
+                   @p.Description</p>
+            </figcaption>
+        </figure>
+    </li>
+    }
+</ul>
+
+
+    <div class="rubriques">
+
+        <div class="allcatitem">
+            <a href="/Home/Rods"><img src="~/images/Rods/pro_rod.jpg"></a>
+            <a href="/Home/Rods"><p class="inscription">Удочки</p></a>
+        </div>
+        <div class="allcatitem">
+            <a href="/Home/Katushki"><img src="~/images/katushki/katushka.jpg"></a>
+            <a href="/Home/Katushki"><p class="inscription">Катушки</p></a>
+</div>
+        <div class="allcatitem ">
+            <a href=""><img src="~/images/OSNASTKA.jpeg"></a>
+            <a href=""><p class="inscription">Оснастка</p></a>
+</div>
+
+        <div class="allcatitem ">
+            <a href=""><img src="~/images/najhivka/oparysh.jpg"></a>
+            <a href=""><p class="inscription">Наживка</p></a>
+        </div>
+
+
+    </div>
+
+    
+        <h3>Добро пожаловать в Fishop</h3>
+        <h1>Наслаждайтесь рыбалкой с нашими удочками </h1>
+        <video controls="controls" src="~/video/sage.mp4.mp4" poster="~/video/poster.png.PNG">Тег video не поддерживается вашим браузером.</video>
+    
+    </div>

@@ -1,0 +1,53 @@
+﻿.review {
+width:90%;
+height: 10%;
+background-color:rgba(0,0,200,0.5);
+margin-top:10px;
+border-radius: 6px;
+padding:3px;
+}
+
+#Top{
+    padding:3px;
+    margin:0;
+   border-bottom: black solid 1px;
+   padding-bottom:10px;
+    
+}
+
+#Name {
+     font-size:25px;
+    font-weight:700;
+    float:left;
+}
+#Date {
+    position:relative;
+    text-align:right;
+    padding:3px;
+
+}
+
+#Text {
+font-weight:500;
+font-size:18px;
+text-align:left;
+overflow:hidden;
+}
+
+.reviewButton{
+    font-weight: 700;
+    font-size: 16px;
+   color: #fff; 
+  text-decoration: none; 
+  user-select: none; 
+  background: rgb(91, 167, 241); 
+  padding: .7em 1.5em; 
+  border-radius: 4px;
+  cursor:pointer;
+  outline: none; 
+}  
+.reviewButton:hover { background: rgb(30, 144, 255); }
+.linkButton:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}

@@ -1,0 +1,104 @@
+.product-list>div.product {
+    
+    padding: 0 6px;
+    border-bottom: 1px solid #dae0e4;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-left: 4px;
+    padding-left: 5px;
+    float: left;
+    background-color:azure;
+    width:90%;
+}
+
+.product_logo {
+    float: left;
+    margin-top: 8px;
+    margin-right: 12px;
+}
+
+.product_logo a img {
+    display: table-cell;
+    width: 150px;
+    height: 150px;
+    text-align: Center;
+    vertical-align: middle;
+    border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #D5D5D5;
+    box-shadow: 0 4px 2px -3px #C8C8C8 !important;
+    padding: 2px;
+}
+
+.product_price {
+    float: right;
+    padding-top: 2px;
+    width: 125px; 
+    border-radius: 3px;
+    padding: 0px;
+    color:black !important;
+    font-weight:700;
+    font-size: 22px;
+
+}
+
+
+.overflow_fix {
+    overflow: visible;
+    float: left;
+}
+.product_title {
+    font-weight: bold;
+    color: #327fb8;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+div#content>a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.chars_list {
+    margin-top: 8px;
+}
+.product_chars {
+    float: right;
+    width: 263px;
+    padding-top: 7px;
+    min-height: 130px;
+}
+
+
+
+a.button, a#button, input.button {
+    margin-top:7px;
+    color: #fff !important;
+    text-decoration: none;
+    background: green;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-size: 17px;
+    padding: 4px 0;
+    cursor: pointer;
+    width: 128px;
+    display: block;
+    text-align: center;
+}
+
+.info{
+    padding: 0px 10px;
+    margin-left: 106px;
+    float: left;
+}
+
+    .info > div {
+     color: black;
+    font-weight:700;
+
+    }
+

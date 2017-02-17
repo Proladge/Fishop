@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MyWebSite2.Models.Review>
+@{
+    ViewBag.Title = "Reviews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/styles/Reviews.css">
+<h1>Отзывы</h1>
+<div id="content">
+
+    <input class="reviewButton" type="button" value="Оставить отзыв" onclick="return location.href= '/Home/AddReview' ">
+
+    @foreach (var b in Model)
+    {
+    <div class="review">
+        
+        <div id="Top">
+        <div id="Name">@b.Name</div>
+        <div id="Date">@b.Date</div>
+</div>
+        <div id="Text">@b.reviewText</div>
+
+        
+         
+    </div>
+    }
+
+</div>

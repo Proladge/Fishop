@@ -1,0 +1,58 @@
+﻿@model MyWebSite2.Models.CartIndexViewModel
+@{
+    ViewBag.Title = "CartIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<h2>Ваша корзина</h2>
+    @if (Model.Cart.CartIsEmpty())
+    {
+        <h3>Корзина пуста</h3>
+    }
+    else
+    { 
+<table id="cartTable">
+    <thead>
+        <tr>
+            <th>Товар</th>
+            <th>Количество</th>
+            <th class="text-right">Цена</th>
+            <th class="text-right">Общая цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-center">@line.Product.Name</td>
+                <td class="text-left">@line.Quantity</td>
+                <td class="text-right">@line.Product.Price.ToString("# грн")</td>
+                <td class="text-right">
+                    @((line.Quantity * line.Product.Price).ToString("# грн"))
+                </td>
+                <td>
+                    <form action="/Cart/RemoveFromCart" method="post" >
+                        <input name="productId"  type="hidden" value=" @line.Product.Id"/>
+                        <input name="returnUrl" type="hidden" value="@Request.Url.PathAndQuery"/>
+                        <div class="pull-right">
+                        <input type="submit" id="delbutton" value="X" />
+                            </div>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Итого:</td>
+            <td class="text-right">
+                @Model.Cart.ComputeTotalValue().ToString("# грн")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+    <input class="linkButtons" type="button" value="Оформить" onclick="return location.href = '/Home/Buy' ">
+        <input class="linkButtons" type="button" value="Продолжыть покупки" onclick="return location.href = '@Model.ReturnUrl' ">
+    }
+</div>

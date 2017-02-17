@@ -1,0 +1,99 @@
+ #sidebar {
+     /* Левая колонка */
+     float: left;
+     /* Обтекание справа */
+     /* Параметры рамки вокруг */
+     width: 180px;
+     /* Ширина колонки */
+     margin: 5px 5px 10px 5px;
+     /* Значения отступов */
+     text-align: left;
+     font-size: 50%;
+     color: white;   
+   }
+#sidebar h2{
+    color: black;
+    font-size: 35px;
+}
+
+ #sidebar ul {
+     list-style-type: none;
+     padding: 0px;
+     margin: 0px;
+ }
+
+    #sidebar ul li {
+    cursor:pointer;
+    }
+ #sidebar>ul>li {
+     background-color: rgba(30, 144, 255, 0.65);
+     position: relative;
+     padding: 10px 0px 10px 5px;
+     border-bottom: 1px solid black;
+     
+ }
+#sidebar ul li:last-child  {
+    border-bottom: none;
+    border-radius:0 0 5px 3px;
+}
+
+#sidebar ul li:first-child{
+ border-radius:5px 3px 0 0 ;   
+}
+#sidebar>ul>li::after{
+    content: " ";
+    position: absolute;
+    border: 5px solid;
+    border-color: transparent transparent transparent #eee;
+   right: 0;
+    bottom: 45% 
+}
+#sidebar>ul>li:hover::after{
+    transform: scaleX(-1);
+    
+}
+
+ #sidebar>ul>li:hover {
+     background-color: rgba(0, 0, 255, 0.65);
+     padding: 10px 0px 10px 10px;
+ }
+ #sidebar>ul>li>a {
+     font-size: 22px;
+     color: white;
+     text-decoration: none;
+     transition: 2s all;
+ }
+ #sidebar ul li ul {
+     position: absolute;
+     display: none;
+     left: 185px;
+     top:0px;
+     z-index: 2;
+ }
+ #sidebar li:hover ul {
+     display: block;
+ }
+ #sidebar ul li ul li {
+     width: 160px;
+     height: 30px;
+     border-left: 10px solid transparent;
+     text-align: left;
+     color: black;
+     font-size: 22px;
+     background-color: rgba(30, 144, 255, 0.65);
+     padding: 8px 0px 8px 10px;
+     border-bottom: 1px black solid;
+ }
+ #sidebar>ul>li>ul>li:hover {
+     background-color: rgba(0, 0, 255, 0.65);
+     padding: 8px 0 8px 15px;
+ }
+ #sidebar>ul>li>ul>li a {
+     color:white;
+     text-decoration: none;
+     
+ }
+
+    #sidebar > ul a {
+display:block;
+    }

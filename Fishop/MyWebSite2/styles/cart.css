@@ -1,0 +1,153 @@
+#cart{
+    position: absolute;
+   margin-left: calc(80% - 65px);
+    top: 110px;
+    border: 4px solid  #FFD700 ;
+    border-radius: 4px;
+}
+@media screen and ( max-width: 500px ){
+    #cart{
+        margin-left:calc(80% - 150px);
+       
+    }
+}
+
+#cart p {
+    font: 18px Helvetica;
+    font-weight:600;
+    padding-top:  7px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    width: 150px;
+    margin: 0; 
+    color: rgb(55, 55, 55);
+    text-align:center;
+}
+
+#cart > p:hover {
+cursor:pointer;
+}
+#cart>p:hover{
+    color: rgb(255, 255, 200);
+    
+}
+
+
+#cart>div{
+    background: azure;
+     border: 4px solid  #FFD700 ;
+    position: absolute;
+   left: -4px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 0;
+     border: 4px solid  #FFD700 ;
+    display: none; 
+    text-align: left;
+    z-index: 7;
+  }
+#cart>div>p{
+    font-weight:800;
+    font: 23px sans-serif;
+    margin: 5px;
+    color: black;
+    width: 140px;
+}
+
+
+/* цыфры*/
+#cart> div >p >span{
+   font: 12px sans-serif;
+    display: block;
+    position: absolute;
+    margin-left: 125px;
+    margin-top: -18px;
+    color: black;
+}
+ 
+#cart > div > a {
+    font: 14px sans-serif;
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    border:  1px solid #E2E2E2;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left:  5px;
+    text-decoration: none;
+    background-color: #E9E9E9;
+    color: black;
+}
+
+
+
+
+#cartTable { width: 60%;}
+#cartTable tfoot td { border-top: 1px dotted gray; font-weight: bold; }
+#cartTable thead th { text-align: right;}
+#cartTable thead th:first-child { text-align: center;}
+#cartTable thead th:nth-child(2) { text-align: left;}
+#cartTable tbody td { text-align: right;}
+#cartTable tbody td:first-child { text-align: left;}
+#cartTable tbody td:nth-child(2) { text-align: left;}
+#cartTable tfoot tr td { text-align: right;}
+.linkButtons{
+    font-weight: 700;
+    font-size: 16px;
+   color: #fff; 
+  text-decoration: none; 
+  user-select: none; 
+  background: rgb(0,238,118); 
+  padding: 0.7em 1em; 
+  border-radius: 4px;
+  cursor:pointer;
+  outline: none; 
+}  
+.linkButtons:hover { background: rgb(0,205,102); }
+.linkButtons:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+input#delbutton {
+    !important;
+    width:30px;
+    height:30px;
+    font-weight:800;
+    border: red solid 3px !important;
+    border-radius: 120%;
+    color: white;
+    background-color:transparent !important;
+    cursor:pointer;
+}
+
+    #delbutton:hover {
+    color:red;
+    }
+#delbutton:active {
+font-weight:600;
+}
+
+#littleCart{
+width:50px;
+height:50px;
+display: none;
+
+}
+
+@media screen and (max-width:500px) {
+    #littleCart {
+    display:block;
+    }
+
+    #cart p {
+        display:none;
+    }
+
+    #cart {
+    border:hidden;
+    margin-left:30%;
+    }
+
+
+}

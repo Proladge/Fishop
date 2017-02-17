@@ -1,0 +1,34 @@
+
+#content { /* Правая колонка */
+    margin: 10px 10px 20px 200px;/* Значения отступов */
+    padding: 5px; /* Поля вокруг текста */
+    border: 4px solid  #FFD700 ; /* Параметры рамки */
+    font-family: sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: rgba(0,0,66,0.5);
+    color: aliceblue;     
+    object-position: center;
+   }
+
+@media screen and (max-width: 500px) {
+    #content {
+   margin:10px 0px 10px 5px ;
+   float:left;
+    }
+}
+
+
+video{
+    
+    border-radius: 6px;
+    width: 80%;
+    height: 50%;
+}
+
+@media screen and (max-width: 310px) {
+video{
+    display:none;
+}
+}

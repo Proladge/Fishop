@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="windows-1251" content="width=device-width" />
+    <meta name="description" content="Рыболовный интернет магазин №1 - 'fishop-001-site1.itempurl.com ' . Здесь Вы найдете все для рыбалки! Широкий выбор снастей и бесплатная доставка по Киеву и Украине!" />
+    <meta name="keywords" content="удилища, катушки, шнуры и лески, крючки и монтаж, приманки, снаряжение, аксессуары, лодки, моторы">
+    <title>Рыболовный интернет магазин | Все для рыбалки | Cнасти для рыбалки | Fishop</title>
+
+    <link rel="shortcut icon" href="~/images/header-symbol.png" type="image/x-icon">
+
+    <LINK REL="stylesheet" TYPE="text/css" HREF="~/Content/Site.css" />
+    <LINK REL="stylesheet" TYPE="text/css" HREF="~/styles/content-style.css"/>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="~/styles/sidebar-style.css"/>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="~/styles/cart.css"/>
+    <LINK rel="stylesheet" type="text/css" href="~/styles/top_menu-style.css" />
+ 
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/cart_script.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="/Home/Index"><img id="header_symbol" src="~/images/header-symbol.png"></a>
+        <h1>FISHOP</h1>
+        <h5>Специализированный<br>интернет-магазин </h5>
+        <div id="cart">
+            <a href="/Cart/CartIndex"><img id="littleCart" src="~/images/cart.png" /></a>
+           
+                @Html.Action("Summary", "Cart")
+            
+        </div>
+        <div class="top_menu">
+            <a href="/Home/Index">Главная</a>
+            <a href="/Home/Contact">Контакты</a>
+            <a href="/Home/Reviews">Oтзывы</a>
+
+        </div>
+    </header>
+    <nav>
+        <div id="sidebar">
+            <h2>Каталог</h2>
+            <ul>
+                <li><a href="/Home/Rods">Удочки</a></li>
+                <li><a href="/Home/Katushki">Катушки</a></li>
+                <li><a href="">Наживка</a>
+                    <ul>
+                        <li><a href="">Мотыль</a></li>
+                        <li><a href="">Червяк</a></li>
+                        <li><a href="">Жывец</a></li>
+                        <li><a href="">Опарыш</a></li>
+                        <li><a href="">Семена</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="">Приманки</a></li>
+                <li>
+                    <a href="">Оснастка</a>
+                    <ul>
+                        <li><a href="">Поплавки</a></li>
+                        <li><a href="">Крючки</a></li>
+                        <li><a href="">Грузики</a></li>
+
+                    </ul>
+
+                </li>
+                <li><a href="">Екипировка рыбака</a></li>
+            </ul>
+        </div>
+    </nav>
+    @RenderBody()
+    <footer id="myfooter">
+<div id="footerInfo"><p>&copy;Рыболовный интернет-магазин "Fishop" 2016</p>
+      <p>Developed by <a href="https://vk.com/v_kovi">Vladimir Kovalenko</a></p></div>
+        <canvas id="canvasik" width="335px" , height="120px" style=" padding:0; margin:0; "></canvas>
+        <canvas id='bgCanvas'></canvas>
+    </footer>
+</body>
+<script>
+    var canv = document.getElementById("canvasik");
+        ctx = canvasik.getContext("2d");
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = '#FFFF00';
+    ctx.beginPath();
+    ctx.lineWidth = 2;
+        ctx.arc(42, 50, 10, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.lineWidth = 5;
+        ctx.moveTo(5, 55);
+        ctx.arc(5, 55, 56, -0.2 * Math.PI, 0.2 * Math.PI);
+        ctx.stroke();
+        ctx.moveTo(5, 55);
+        ctx.quadraticCurveTo(130, -65, 345, 90);
+        ctx.stroke();
+			ctx.moveTo(5, 55);
+			ctx.quadraticCurveTo(130, 177, 345, 30); ctx.stroke(); // *22
+			ctx.lineWidth = 2;
+         ctx.font = 'bold 50px sans-serif';
+        ctx.strokeText("Fishop",75,70);
+
+
+        ctx.closePath();
+    
+
+        var canvas = document.getElementById('bgCanvas');
+        var foot = document.getElementById('myfooter');
+        console.log(foot.style.height);
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var particleCount = 100;
+        for (var i = 0; i < particleCount; i++) particles.push(new particle());
+
+        function particle() {
+            this.x = Math.random() * canvas.width;
+            this.y =  Math.random() * 300;
+            this.speed =  Math.random() * 2;
+            this.radius = Math.random() * 3;
+            this.opacity = (Math.random() * 100) / 1000;
+        }
+
+        function loop() {
+            requestAnimationFrame(loop);
+            draw();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalCompositeOperation = 'lighter';
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                ctx.beginPath();
+                ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
+                ctx.fill();
+                p.y -= p.speed;
+                if (p.y <= -10) particles[i] = new particle();
+            }
+        }
+        loop();
+
+
+</script>
+</html>

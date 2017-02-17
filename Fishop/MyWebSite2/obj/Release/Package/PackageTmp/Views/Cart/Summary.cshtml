@@ -1,0 +1,23 @@
+﻿@model MyWebSite2.Models.Cart
+@{
+    Layout = null;
+}
+<p>Корзина(@Model.Lines.Count())
+    <span id="corner" class="corner-down"></span>
+</p>
+<div>
+    @if (@Model.CartIsEmpty())
+    {
+        <p>КОРЗИНА</p>
+        <p>ПУСТА</p>
+
+    }
+    else
+    {
+        <p>Товаров:    @Model.Lines.Count()</p>
+        <p>На сумму: @Model.ComputeTotalValue().ToString("# грн")</p>
+                <input type="button" class="linkButtons" style="margin-left:14px;" value="В корзину" onclick="return location.href = '/Cart/CartIndex'">
+                    
+                </input>
+    }
+    </div>
